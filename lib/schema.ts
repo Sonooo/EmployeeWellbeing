@@ -17,7 +17,9 @@ export const users = sqliteTable('users', {
   loginDates: text('login_dates').default('[]'), // JSON array of login ISO strings
   status: text('status').notNull().default('approved'), // 'pending' | 'approved' | 'declined'
   roles: text('roles').notNull().default('["employee"]'),
+  isActive: integer('is_active').notNull().default(1), // 0 = inactive, 1 = active
   createdAt: createdAtCol(),
+  updatedAt: text('updated_at').notNull().$defaultFn(() => new Date().toISOString()),
 });
 
 // 2. Surveys Table

@@ -29,18 +29,28 @@ Ensure you have Node.js 20 LTS installed.
 ```bash
 # Install dependencies
 pnpm install
+# or, if pnpm is not available:
+npm install
 
 # Copy example environment variables
 cp .env.example .env.local
+# On Windows PowerShell:
+# copy .env.example .env.local
 
 # Synchronize SQLite schema using Drizzle ORM
 pnpm db:push
+# or, if pnpm is not available:
+npx drizzle-kit push
 
 # Seed the database with mock accounts, surveys, posts, etc.
 pnpm db:seed
+# or, if pnpm is not available:
+npx tsx lib/seed.ts
 
 # Run local development server
 pnpm dev
+# or, if pnpm is not available:
+npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) to view the application.
 
