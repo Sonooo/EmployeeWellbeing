@@ -14,7 +14,8 @@ import {
   Coins, 
   BarChart3,
   X,
-  Sparkles
+  Sparkles,
+  Users
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -34,6 +35,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     { href: '/recognition', label: 'Recognition', icon: Award, roles: ['employee', 'admin'] },
     { href: '/konnect', label: 'Konnect', icon: Coins, roles: ['employee', 'admin'] },
     { href: '/dashboard', label: 'Dashboard', icon: BarChart3, roles: ['admin'] },
+    { href: '/admin/users', label: 'User Management', icon: Users, roles: ['admin'] },
   ];
 
   const filteredLinks = navLinks.filter(
